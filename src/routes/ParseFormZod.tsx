@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createPerson } from "./data/data";
+import { createPerson } from "../data/data";
 import { ZodFormattedError, z } from "zod";
 
 const FormSchema = z.object({

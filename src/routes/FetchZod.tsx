@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getPeople } from "./data/data";
+import { getPeople } from "../data/data";
 import { z } from "zod";
 
 const StarWarsSchema = z.array(

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createPerson } from "./data/data";
+import { createPerson } from "../data/data";
 
 export default function ParseForm() {
   const [errorMessage, setErrorMessage] = useState("");

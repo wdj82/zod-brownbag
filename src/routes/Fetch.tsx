@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getPeople } from "./data/data";
+import { getPeople } from "../data/data";
 
 export interface DataObject {
   firstName: string;

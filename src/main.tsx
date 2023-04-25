@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import NoZod from "./Fetch";
-import WithZod from "./FetchZod";
+import NoZod from "./routes/Fetch";
+import WithZod from "./routes/FetchZod";
 import "./index.css";
-import ParseForm from "./ParseForm";
-import ParseFormZod from "./ParseFormZod";
+import ParseForm from "./routes/ParseForm";
+import ParseFormZod from "./routes/ParseFormZod";
 
 const router = createBrowserRouter([
   {
