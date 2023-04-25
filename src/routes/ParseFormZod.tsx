@@ -6,6 +6,7 @@ const FormSchema = z.object({
   firstName: z.string().min(1),
   lastName: z.string().min(1, { message: "Last name required" }),
   email: z.string().email(),
+  phoneNumber: z.string().min(5).max(20).optional(),
 });
 
 type PersonDetails = z.infer<typeof FormSchema>;
@@ -71,10 +72,22 @@ export default function ParseFormZod() {
         )}
       </section>
 
+      <section className="flex gap-2">
+        <label htmlFor="phone">Phone #:</label>
+        <input type="text" name="phone" />
+        {zodError?.phoneNumber && (
+          <div className="text-red-500 font-bold">
+            {zodError.phoneNumber._errors.map((error) => error)}
+          </div>
+        )}
+      </section>
+
       <button className="bg-blue-500 text-white rounded p-2 w-32">
         Submit
       </button>
-      {errorMessage && <div className="text-red-500 bold">{errorMessage}</div>}
+      {errorMessage && (
+        <div className="text-red-500 font-bold">{errorMessage}</div>
+      )}
     </form>
   );
 }

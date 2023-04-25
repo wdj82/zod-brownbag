@@ -37,6 +37,11 @@ export default function ParseForm() {
         <input type="text" name="email" />
       </section>
 
+      <section className="flex gap-2">
+        <label htmlFor="phone">Phone #:</label>
+        <input type="text" name="phone" />
+      </section>
+
       <button className="bg-blue-500 text-white rounded p-2 w-32">
         Submit
       </button>
