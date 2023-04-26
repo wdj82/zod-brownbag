@@ -8,7 +8,7 @@ export interface DataObject {
   id: number;
 }
 
-const fetchStarWarsPersonName = async () => {
+const fetchPeople = async () => {
   const data = await getPeople();
   return data;
 };
@@ -17,7 +17,7 @@ export default function NoZod() {
   const [data, setData] = useState<DataObject[]>([]);
 
   const fetchData = useCallback(async () => {
-    const response = await fetchStarWarsPersonName();
+    const response = await fetchPeople();
     setData(response);
   }, []);
 

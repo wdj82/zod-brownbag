@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getPeople } from "../data/data";
 import { z } from "zod";
 
-const StarWarsSchema = z.array(
+const PeopleSchema = z.array(
   z.object({
     id: z.number(),
     firstName: z.string(),
@@ -11,11 +11,11 @@ const StarWarsSchema = z.array(
   })
 );
 
-export type PersonList = z.infer<typeof StarWarsSchema>;
+export type PersonList = z.infer<typeof PeopleSchema>;
 
-const fetchStarWarsPersonName = async () => {
+const fetchPeople = async () => {
   const data = await getPeople();
-  const parsedData = StarWarsSchema.parse(data);
+  const parsedData = PeopleSchema.parse(data);
   return parsedData;
 };
 
@@ -25,7 +25,7 @@ export default function NoZod() {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await fetchStarWarsPersonName();
+      const response = await fetchPeople();
       setData(response);
     } catch (error) {
       setErrorMessage("Problem with fetched object");
