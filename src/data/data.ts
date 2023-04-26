@@ -1,4 +1,4 @@
-export const json = [
+export const people = [
   {
     id: 0,
     firstName: "Luke",
@@ -28,7 +28,7 @@ export const json = [
 export function getPeople(): Promise<any> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(json);
+      resolve(people);
     }, 250);
   });
 }
