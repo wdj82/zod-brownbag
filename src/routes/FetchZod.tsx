@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getPeople } from "../data/data";
 import { z } from "zod";
 
-const PeopleSchema = z.array(
+const peopleSchema = z.array(
   z.object({
     id: z.number(),
     firstName: z.string(),
@@ -11,11 +11,11 @@ const PeopleSchema = z.array(
   })
 );
 
-export type PersonList = z.infer<typeof PeopleSchema>;
+export type PersonList = z.infer<typeof peopleSchema>;
 
 const fetchPeople = async () => {
   const data = await getPeople();
-  const parsedData = PeopleSchema.parse(data);
+  const parsedData = peopleSchema.parse(data);
   return parsedData;
 };
 

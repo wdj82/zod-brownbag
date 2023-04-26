@@ -2,14 +2,14 @@ import { useState } from "react";
 import { createPerson } from "../data/data";
 import { ZodFormattedError, z } from "zod";
 
-const FormSchema = z.object({
+const formSchema = z.object({
   firstName: z.string().min(1),
   lastName: z.string().min(1, { message: "Last name required" }),
   email: z.string().email(),
   phoneNumber: z.string().min(5).max(20).optional(),
 });
 
-type PersonDetails = z.infer<typeof FormSchema>;
+type PersonDetails = z.infer<typeof formSchema>;
 
 export default function ParseFormZod() {
   const [zodError, setZodError] = useState<ZodFormattedError<PersonDetails>>();
@@ -24,7 +24,7 @@ export default function ParseFormZod() {
     const formObject = Object.fromEntries(formData);
 
     // parse form before sending to server
-    const result = FormSchema.safeParse(formObject);
+    const result = formSchema.safeParse(formObject);
     if (!result.success) {
       setZodError(result.error.format());
       return;
