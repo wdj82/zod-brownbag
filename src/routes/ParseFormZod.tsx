@@ -27,7 +27,6 @@ export default function ParseFormZod() {
     const result = FormSchema.safeParse(formObject);
     if (!result.success) {
       setZodError(result.error.format());
-      console.log(result.error.format());
       return;
     }
 
