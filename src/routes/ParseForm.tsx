@@ -24,22 +24,22 @@ export default function ParseForm() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-8 text-3xl">
       <section className="flex gap-2">
         <label htmlFor="firstName">First Name:</label>
-        <input type="text" name="firstName" />
+        <input type="text" name="firstName" className="w-52" />
       </section>
 
       <section className="flex gap-2">
         <label htmlFor="lastName">Last Name:</label>
-        <input type="text" name="lastName" />
+        <input type="text" name="lastName" className="w-52" />
       </section>
 
       <section className="flex gap-2">
         <label htmlFor="email">Email:</label>
-        <input type="text" name="email" />
+        <input type="text" name="email" className="w-52" />
       </section>
 
       <section className="flex gap-2">
         <label htmlFor="phone">Phone #:</label>
-        <input type="text" name="phone" />
+        <input type="text" name="phone" className="w-52" />
       </section>
 
       <button className="bg-blue-500 text-white rounded p-2 w-32">

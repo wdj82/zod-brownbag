@@ -44,7 +44,7 @@ export default function ParseFormZod() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-8 text-3xl">
       <section className="flex gap-2">
         <label htmlFor="firstName">First Name:</label>
-        <input type="text" name="firstName" />
+        <input type="text" name="firstName" className="w-52" />
         {zodError?.firstName && (
           <div className="text-red-500 font-bold">
             {zodError.firstName._errors.map((error) => error)}
@@ -54,7 +54,7 @@ export default function ParseFormZod() {
 
       <section className="flex gap-2">
         <label htmlFor="lastName">Last Name:</label>
-        <input type="text" name="lastName" />
+        <input type="text" name="lastName" className="w-52" />
         {zodError?.lastName && (
           <div className="text-red-500 font-bold">
             {zodError.lastName._errors.map((error) => error)}
@@ -64,7 +64,7 @@ export default function ParseFormZod() {
 
       <section className="flex gap-2">
         <label htmlFor="email">Email:</label>
-        <input type="text" name="email" />
+        <input type="text" name="email" className="w-52" />
         {zodError?.email && (
           <div className="text-red-500 font-bold">
             {zodError.email._errors.map((error) => error)}
@@ -74,7 +74,7 @@ export default function ParseFormZod() {
 
       <section className="flex gap-2">
         <label htmlFor="phone">Phone #:</label>
-        <input type="text" name="phone" />
+        <input type="text" name="phone" className="w-52" />
         {zodError?.phoneNumber && (
           <div className="text-red-500 font-bold">
             {zodError.phoneNumber._errors.map((error) => error)}
